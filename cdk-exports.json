@@ -1,0 +1,7 @@
+{
+  "CdkBackendStack": {
+    "awsappsyncapiKey": "da2-onrvevjuizewtjryaobxe2vbbq",
+    "awsappsyncauthenticationType": "API_KEY",
+    "awsappsyncgraphqlEndpoint": "https://47e4anvyhfg4nnvkw72qhmcrcu.appsync-api.eu-west-1.amazonaws.com/graphql"
+  }
+}

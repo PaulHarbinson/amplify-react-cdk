@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Amplify from 'aws-amplify';
 import config from './aws-exports';
-import {CdkBackendStack} from '../cdk-exports.json';
+import {CdkBackendStack} from './cdk-exports.json';
 
 const CDKConfig = {
   aws_appsync_graphqlEndpoint: CdkBackendStack.awsappsyncgraphqlEndpoint,

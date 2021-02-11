@@ -13,16 +13,16 @@ function App() {
     }
   `
   useEffect(() => {
-    fetchNotes()
+    fetchPosts()
   }, [])
 
-  async function fetchNotes() {
+  async function fetchPosts() {
     try {
       const postData = await API.graphql({ query })
       console.log('data from GraphQL: ', postData)
-      updateNotes(postData.data.listPosts.items)
+      updatePosts(postData.data.listPosts.items)
     } catch (err) {
-      console.log('error fetching notes...', err)
+      console.log('error fetching posts...', err)
     }
   }
 
@@ -30,12 +30,12 @@ function App() {
   return (
     <div className="App">
       {
-        notes.map((note, index) => (
+        posts.map((post, index) => (
           <div key={index}>
             <h1>BY FUCK!</h1>
-            <h3>{note.username}</h3>
-            <h5>{note.title}</h5>
-            <p>{note.content}</p>
+            <h3>{post.username}</h3>
+            <h5>{post.title}</h5>
+            <p>{post.content}</p>
           </div>
         ))
       }

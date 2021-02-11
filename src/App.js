@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { API } from 'aws-amplify';
 
 function App() {
-  const [notes, updateNotes] = useState([])
+  const [posts, updatePosts] = useState([])
 
   const query = `
-    query listNotes {
-      listNotes {
+    query listPosts {
+      listPosts {
         id title content username
       }
     }
@@ -18,9 +18,9 @@ function App() {
 
   async function fetchNotes() {
     try {
-      const noteData = await API.graphql({ query })
-      console.log('data from GraphQL: ', noteData)
-      updateNotes(noteData.data.listNotes.items)
+      const postData = await API.graphql({ query })
+      console.log('data from GraphQL: ', postData)
+      updateNotes(postData.data.listPosts.items)
     } catch (err) {
       console.log('error fetching notes...', err)
     }
@@ -32,6 +32,7 @@ function App() {
       {
         notes.map((note, index) => (
           <div key={index}>
+            <h1>BY FUCK!</h1>
             <h3>{note.username}</h3>
             <h5>{note.title}</h5>
             <p>{note.content}</p>

@@ -13,6 +13,10 @@ const CDKConfig = {
   aws_appsync_apiKey: CdkBackendStack.aws_appsync_apiKey
 }
 
+// Amplify.configure({
+//   ...config, CDKConfig
+// })
+
 Amplify.configure({
   "aws_project_region": "eu-west-1",
   "aws_cognito_identity_pool_id": "eu-west-1:7cf44034-ac23-41c5-9fb1-b71c727d4d14",

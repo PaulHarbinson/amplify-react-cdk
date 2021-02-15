@@ -12,6 +12,23 @@ function App() {
       }
     }
   `
+
+  const mutation = `
+    mutation createPost(post: PostInput!) {
+      createPost(post: $post) {
+        id title content
+      }
+    }
+  `
+
+  const subscription = `
+    subscription onCreatePost {
+      onCreatePost {
+        id title content
+      }
+    }
+  `
+
   useEffect(() => {
     fetchPosts()
   }, [])
@@ -24,6 +41,25 @@ function App() {
     } catch (err) {
       console.log('error fetching posts...', err)
     }
+  }
+
+  (async function createPost() {
+    await API.graphql({
+      query: mutation,
+      variables: { post: { id: '007', title: 'Client-side Note', content: 'Note sent from UI'} }
+    })
+    console.log('post successfully created')
+  })();
+
+  function subscribe() {
+    API.graphql({
+      query: subscription
+    })
+    .subscribe({
+      next: postData => {
+        console.log('postData: ', postData)
+      }
+    })
   }
 
 

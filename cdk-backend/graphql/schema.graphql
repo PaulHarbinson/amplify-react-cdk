@@ -27,3 +27,12 @@ type Mutation {
   updatePost(post: UpdatePostInput!): Post @aws_cognito_user_pools
   deletePost(postId: String!): String @aws_cognito_user_pools
 }
+
+type Subscription {
+  onCreatePost: Post
+    @aws_subscribe(mutations: ["createPost"])
+  onDeletePost: String
+    aws_subscribe(mutations: ["deletePost"])
+  onUpdatePost: Post
+    aws_subscribe(mutations: ["updatePost"])
+}

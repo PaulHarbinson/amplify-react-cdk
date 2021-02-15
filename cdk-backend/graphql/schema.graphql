@@ -23,9 +23,9 @@ type Query {
 }
 
 type Mutation {
-  createPost(post: PostInput!): Post @aws_cognito_user_pools
-  updatePost(post: UpdatePostInput!): Post @aws_cognito_user_pools
-  deletePost(postId: String!): String @aws_cognito_user_pools
+  createPost(post: PostInput!): Post @aws_cognito_user_pools @aws_api_key
+  updatePost(post: UpdatePostInput!): Post @aws_cognito_user_pools @aws_api_key
+  deletePost(postId: String!): String @aws_cognito_user_pools @aws_api_key
 }
 
 type Subscription {

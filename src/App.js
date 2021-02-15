@@ -14,20 +14,20 @@ function App() {
   `
 
   const mutation = `
-    mutation createPost(post: PostInput!) {
+    mutation createPost($post: PostInput!) {
       createPost(post: $post) {
         id title content
       }
     }
   `
 
-  const subscription = `
-    subscription onCreatePost {
-      onCreatePost {
-        id title content
-      }
-    }
-  `
+  // const subscription = `
+  //   subscription onCreatePost {
+  //     onCreatePost {
+  //       id title content
+  //     }
+  //   }
+  // `
 
   useEffect(() => {
     fetchPosts()
@@ -46,21 +46,21 @@ function App() {
   (async function createPost() {
     await API.graphql({
       query: mutation,
-      variables: { post: { id: '007', title: 'Client-side Note', content: 'Note sent from UI'} }
+      variables: { post: { id: '4', title: 'Client-side Note', content: 'Note sent from UI'} }
     })
     console.log('post successfully created')
   })();
 
-  function subscribe() {
-    API.graphql({
-      query: subscription
-    })
-    .subscribe({
-      next: postData => {
-        console.log('postData: ', postData)
-      }
-    })
-  }
+  // function subscribe() {
+  //   API.graphql({
+  //     query: subscription
+  //   })
+  //   .subscribe({
+  //     next: postData => {
+  //       console.log('postData: ', postData)
+  //     }
+  //   })
+  // }
 
 
   return (

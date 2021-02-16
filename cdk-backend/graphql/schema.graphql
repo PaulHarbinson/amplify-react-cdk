@@ -2,14 +2,13 @@ type Post @aws_cognito_user_pools @aws_api_key {
   id: ID!
   title: String!
   content: String!
-  username: String!
+  username: String
 }
 
 input PostInput {
   id: ID!
   title: String!
   content: String!
-  username: String
 }
 
 input UpdatePostInput {

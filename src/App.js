@@ -21,13 +21,13 @@ function App() {
     }
   `
 
-  // const subscription = `
-  //   subscription onCreatePost {
-  //     onCreatePost {
-  //       id title content
-  //     }
-  //   }
-  // `
+  const subscription = `
+    subscription onCreatePost {
+      onCreatePost {
+        id title content
+      }
+    }
+  `
 
   useEffect(() => {
     fetchPosts()
@@ -46,21 +46,21 @@ function App() {
   (async function createPost() {
     await API.graphql({
       query: mutation,
-      variables: { post: { id: '5', title: 'Client-side Note 5', content: 'Note 5 sent from UI' } }
+      variables: { post: { id: '6', title: 'Client-side Note 6', content: 'Note 6 sent from UI' } }
     })
     console.log('post successfully created')
   })();
 
-  // function subscribe() {
-  //   API.graphql({
-  //     query: subscription
-  //   })
-  //   .subscribe({
-  //     next: postData => {
-  //       console.log('postData: ', postData)
-  //     }
-  //   })
-  // }
+  function subscribe() {
+    API.graphql({
+      query: subscription
+    })
+    .subscribe({
+      next: postData => {
+        console.log('postData: ', postData)
+      }
+    })
+  }
 
 
   return (
@@ -68,9 +68,11 @@ function App() {
       {
         posts.map((post, index) => (
           <div key={index}>
-            <h3>{post.username ? post.username : 'UNKNOWN USER'}</h3>
-            <h5>{post.title}</h5>
-            <p>{post.content}</p>
+            <section>
+              <h3>{post.username ? post.username : 'UNKNOWN USER'}</h3>
+              <h5>{post.title}</h5>
+              <p>{post.content}</p>
+            </section>
           </div>
         ))
       }

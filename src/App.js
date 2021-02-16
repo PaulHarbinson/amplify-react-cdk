@@ -67,7 +67,7 @@ function App() {
     <div className="App">
       {
         posts.map((post, index) => (
-          <div key={index} style={{ marginTop: "5px" }}>
+          <div key={index} style={{ marginTop: "20px" }}>
               <h3>{post.username ? post.username : 'UNKNOWN USER'}</h3>
               <h5>{post.title}</h5>
               <p>{post.content}</p>

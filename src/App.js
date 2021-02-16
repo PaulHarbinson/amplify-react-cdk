@@ -68,7 +68,7 @@ function App() {
       {
         posts.map((post, index) => (
           <div key={index}>
-            <h3>post.username ? {post.username} : 'UNKNOWN USER'</h3>
+            <h3>({post.username}) ? {post.username} : 'UNKNOWN USER'</h3>
             <h5>{post.title}</h5>
             <p>{post.content}</p>
           </div>

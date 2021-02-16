@@ -46,7 +46,7 @@ function App() {
   (async function createPost() {
     await API.graphql({
       query: mutation,
-      variables: { post: { id: '4', title: 'Client-side Note', content: 'Note sent from UI'} }
+      variables: { post: { id: '5', title: 'Client-side Note 5', content: 'Note 5 sent from UI', username: 'Paul'} }
     })
     console.log('post successfully created')
   })();

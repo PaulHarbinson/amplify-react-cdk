@@ -9,6 +9,7 @@ input PostInput {
   id: ID!
   title: String!
   content: String!
+  username: String
 }
 
 input UpdatePostInput {

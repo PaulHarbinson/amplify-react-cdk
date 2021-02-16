@@ -9,8 +9,8 @@ import {CdkBackendStack} from './cdk-exports.json';
 
 const CDKConfig = {
   "aws_appsync_graphqlEndpoint": CdkBackendStack.awsappsyncgraphqlEndpoint,
-  "aws_appsync_authenticationType": CdkBackendStack.aws_appsync_authenticationType,
-  "aws_appsync_apiKey": CdkBackendStack.aws_appsync_apiKey
+  "aws_appsync_authenticationType": CdkBackendStack.awsappsyncauthenticationType,
+  "aws_appsync_apiKey": CdkBackendStack.awsappsyncapiKey
 }
 
 Amplify.configure({

@@ -19,12 +19,12 @@ import {CdkBackendStack} from './cdk-exports.json';
 
 Amplify.configure({
   "aws_project_region": "eu-west-1",
-  "aws_cognito_identity_pool_id": "eu-west-1:7cf44034-ac23-41c5-9fb1-b71c727d4d14",
+  "aws_cognito_identity_pool_id": "",
   "aws_cognito_region": "eu-west-1",
-  "aws_user_pools_id": "eu-west-1_Dbw9wRPAX",
-  "aws_user_pools_web_client_id": "1aei85ab3q4fo8tab3a0ts8hu4",
+  "aws_user_pools_id": "eu-west-",
+  "aws_user_pools_web_client_id": "",
   "oauth": {},
-  "aws_appsync_apiKey": "da2-onrvevjuizewtjryaobxe2vbbq",
+  "aws_appsync_apiKey": "",
   "aws_appsync_authenticationType": "API_KEY",
   "aws_appsync_graphqlEndpoint": "https://47e4anvyhfg4nnvkw72qhmcrcu.appsync-api.eu-west-1.amazonaws.com/graphql"
 })
